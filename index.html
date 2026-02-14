@@ -188,11 +188,48 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
-      <span class="muted">WeatherNow UI starter. Connect an API when ready.</span>
-      <a class="link" href="#" id="fakeDocsLink">API notes</a>
+  <div class="container footer__grid">
+
+    <div class="footer__brand">
+      <div class="footer__logo">
+        <span class="footer__icon">☁︎</span>
+        <span class="footer__name">WeatherNow</span>
+      </div>
+      <p class="footer__tagline">
+        Real-time weather forecasts with clean, modern design.
+      </p>
     </div>
-  </footer>
+
+    <div class="footer__links">
+      <h4>Product</h4>
+      <a href="#">Current Weather</a>
+      <a href="#">Hourly Forecast</a>
+      <a href="#">5-Day Forecast</a>
+    </div>
+
+    <div class="footer__links">
+      <h4>Resources</h4>
+      <a href="#">API Documentation</a>
+      <a href="#">Data Provider</a>
+      <a href="#">GitHub Repository</a>
+    </div>
+
+    <div class="footer__links">
+      <h4>Legal</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container footer__bottom-inner">
+      <span>© <span id="year"></span> WeatherNow. All rights reserved.</span>
+      <span>Built with OpenWeather API</span>
+    </div>
+  </div>
+</footer>
+
 
   <script src="script.js"></script>
 </body>
