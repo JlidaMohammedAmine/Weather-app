@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WeatherNow</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#" aria-label="WeatherNow Home">
+        <span class="brand__mark" aria-hidden="true">☁︎</span>
+        <span class="brand__text">WeatherNow</span>
+      </a>
+
+      <nav class="nav" aria-label="Quick actions">
+        <button class="chip" type="button" data-unit="metric" aria-pressed="true">°C</button>
+        <button class="chip" type="button" data-unit="imperial" aria-pressed="false">°F</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main">
+    <section class="hero">
+      <div class="hero__text">
+        <h1>Check weather fast.</h1>
+        <p>Search a city, use your location, and get a clean forecast summary.</p>
+      </div>
+
+      <div class="card search-card">
+        <form id="searchForm" class="search" autocomplete="off">
+          <label class="sr-only" for="cityInput">City name</label>
+
+          <div class="search__row">
+            <div class="field">
+              <span class="field__icon" aria-hidden="true">⌕</span>
+              <input
+                id="cityInput"
+                name="city"
+                type="text"
+                placeholder="Search city (e.g., Casablanca)"
+                spellcheck="false"
+                inputmode="search"
+                aria-describedby="helpText"
+              />
+            </div>
+
+            <button class="btn primary" type="submit">
+              Get weather
+            </button>
+
+            <button class="btn ghost" type="button" id="geoBtn">
+              Use my location
+            </button>
+          </div>
+
+          <p id="helpText" class="help">
+            Tip: press <kbd>Enter</kbd> to search. Hover buttons to see highlights.
+          </p>
+        </form>
+
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card current" aria-label="Current weather">
+        <div class="current__top">
+          <div>
+            <h2 id="placeName" class="place">—</h2>
+            <p id="placeMeta" class="meta">Search a city to begin</p>
+          </div>
+
+          <div class="badge" id="conditionBadge" aria-hidden="true">—</div>
+        </div>
+
+        <div class="current__main">
+          <div class="temp">
+            <div class="temp__value">
+              <span id="tempNow">—</span><span class="temp__unit" id="tempUnit">°C</span>
+            </div>
+            <p class="temp__range">
+              Feels like <span id="feelsLike">—</span><span class="temp__unit">°</span>
+            </p>
+          </div>
+
+          <div class="iconbox" aria-hidden="true">
+            <div class="iconbox__icon" id="bigIcon">⛅</div>
+            <div class="iconbox__sub" id="bigDesc">—</div>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat__label">Humidity</span>
+            <span class="stat__value" id="humidity">—</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label">Wind</span>
+            <span class="stat__value" id="wind">—</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label">Pressure</span>
+            <span class="stat__value" id="pressure">—</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label">Visibility</span>
+            <span class="stat__value" id="visibility">—</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card forecast" aria-label="Forecast">
+        <div class="card__head">
+          <h3>Next hours</h3>
+          <p class="muted">Demo layout (wireframe) until you connect an API.</p>
+        </div>
+
+        <div class="forecast__row" id="forecastRow">
+          <div class="pill">
+            <span class="pill__time">Now</span>
+            <span class="pill__icon" aria-hidden="true">⛅</span>
+            <span class="pill__temp">—</span>
+          </div>
+          <div class="pill">
+            <span class="pill__time">+3h</span>
+            <span class="pill__icon" aria-hidden="true">🌤️</span>
+            <span class="pill__temp">—</span>
+          </div>
+          <div class="pill">
+            <span class="pill__time">+6h</span>
+            <span class="pill__icon" aria-hidden="true">☁️</span>
+            <span class="pill__temp">—</span>
+          </div>
+          <div class="pill">
+            <span class="pill__time">+9h</span>
+            <span class="pill__icon" aria-hidden="true">🌧️</span>
+            <span class="pill__temp">—</span>
+          </div>
+        </div>
+
+        <div class="divider" role="separator" aria-hidden="true"></div>
+
+        <div class="card__head">
+          <h3>Next days</h3>
+          <p class="muted">Clean 5-day table (demo data).</p>
+        </div>
+
+        <div class="days" id="daysList">
+          <div class="day">
+            <span class="day__name">Today</span>
+            <span class="day__mid"><span aria-hidden="true">⛅</span> Partly cloudy</span>
+            <span class="day__hi">—</span>
+            <span class="day__lo">—</span>
+          </div>
+          <div class="day">
+            <span class="day__name">Mon</span>
+            <span class="day__mid"><span aria-hidden="true">🌤️</span> Clear</span>
+            <span class="day__hi">—</span>
+            <span class="day__lo">—</span>
+          </div>
+          <div class="day">
+            <span class="day__name">Tue</span>
+            <span class="day__mid"><span aria-hidden="true">☁️</span> Cloudy</span>
+            <span class="day__hi">—</span>
+            <span class="day__lo">—</span>
+          </div>
+          <div class="day">
+            <span class="day__name">Wed</span>
+            <span class="day__mid"><span aria-hidden="true">🌧️</span> Rain</span>
+            <span class="day__hi">—</span>
+            <span class="day__lo">—</span>
+          </div>
+          <div class="day">
+            <span class="day__name">Thu</span>
+            <span class="day__mid"><span aria-hidden="true">⛈️</span> Storm</span>
+            <span class="day__hi">—</span>
+            <span class="day__lo">—</span>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="muted">WeatherNow UI starter. Connect an API when ready.</span>
+      <a class="link" href="#" id="fakeDocsLink">API notes</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
