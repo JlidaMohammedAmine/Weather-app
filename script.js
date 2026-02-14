@@ -975,7 +975,9 @@ if (cached?.payload?.hourly?.time && cached?.payload?.daily?.time) {
   function iconSpark() { return iconBase(`<path d="M12 2l1.3 6.2L20 9.5l-6.2 1.3L12.5 17 11.2 10.8 5 9.5l6.2-1.3L12 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>`); }
   function iconSunSmall() { return iconBase(`<path d="M12 16.2a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z" stroke="currentColor" stroke-width="1.7"/><path d="M12 2v2.1M12 19.9V22M2 12h2.1M19.9 12H22" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>`); }
   function iconWind() { return iconBase(`<path d="M3 9.2h10.6a2.2 2.2 0 1 0-2.2-2.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M3 13h14.2a2.2 2.2 0 1 1-2.2 2.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M3 16.8h8.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>`); }
+  el("year").textContent = new Date().getFullYear();
 
   // ---------- Start ----------
   bootstrap();
+  
 })();

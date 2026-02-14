@@ -248,22 +248,78 @@
   </main>
 
   <footer class="footer">
-    <div class="wrap footer__inner">
-      <div class="footer__left">
-        <div class="footer__brand">
-          <span class="brand__mark brand__mark--sm" aria-hidden="true"></span>
-          <span>Atmos</span>
+  <div class="wrap footer__grid">
+    <div class="footer__brandcol">
+      <div class="footer__brandrow">
+        <span class="brand__mark brand__mark--sm" aria-hidden="true"></span>
+        <div class="footer__brandtext">
+          <div class="footer__brandname">Atmos</div>
+          <div class="footer__brandtag">Weather Intelligence</div>
         </div>
-        <div class="footer__meta">© <span id="year"></span> • Built for speed • Data by Open-Meteo</div>
       </div>
 
-      <nav class="footer__nav" aria-label="Footer">
-        <a id="aboutLink" href="#">About</a>
-        <a id="privacyLink" href="#">Privacy</a>
-        <a id="statusLink" href="#">Status</a>
-      </nav>
+      <p class="footer__blurb">
+        Premium weather dashboard built for speed and clarity. Search + geolocation, hourly + 7-day outlook,
+        saved locations, offline cache, and clean accessibility.
+      </p>
+
+      <div class="footer__badges" aria-label="Product status">
+        <span class="fbadge">No API key</span>
+        <span class="fbadge">Client-side only</span>
+        <span class="fbadge">Open-Meteo</span>
+      </div>
+
+      <div class="footer__mini">
+        <span>© <span id="year"></span> Atmos</span>
+        <span class="dot">•</span>
+        <a class="footer__miniLink" id="statusLink" href="#">Status</a>
+        <span class="dot">•</span>
+        <a class="footer__miniLink" id="privacyLink" href="#">Privacy</a>
+      </div>
     </div>
-  </footer>
+
+    <div class="footer__cols" aria-label="Footer links">
+      <div class="footer__col">
+        <div class="footer__title">Product</div>
+        <a class="footer__link" href="#main">Dashboard</a>
+        <a class="footer__link" href="#main" id="aboutLink">About</a>
+        <a class="footer__link" href="#" onclick="document.getElementById('q').focus(); return false;">Search</a>
+      </div>
+
+      <div class="footer__col">
+        <div class="footer__title">Features</div>
+        <a class="footer__link" href="#" onclick="document.getElementById('geoBtn').click(); return false;">Use my location</a>
+        <a class="footer__link" href="#" onclick="document.getElementById('unitC').click(); return false;">Units (°C/°F)</a>
+        <a class="footer__link" href="#" onclick="document.getElementById('themeBtn').click(); return false;">Theme</a>
+        <a class="footer__link" href="#" onclick="document.getElementById('refreshBtn').click(); return false;">Refresh</a>
+      </div>
+
+      <div class="footer__col">
+        <div class="footer__title">Data</div>
+        <div class="footer__kv">
+          <div class="footer__k">Provider</div>
+          <div class="footer__v">Open-Meteo</div>
+          <div class="footer__k">Geocoding</div>
+          <div class="footer__v">Open-Meteo Geo</div>
+          <div class="footer__k">Cache</div>
+          <div class="footer__v">LocalStorage</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap footer__bottom">
+    <div class="footer__legal">
+      Forecasts are estimates and may be inaccurate. Do not use for safety-critical decisions.
+    </div>
+
+    <div class="footer__right">
+      <span class="footer__pill" id="footerLocPill">—</span>
+      <span class="footer__pill" id="footerUpdatedPill">—</span>
+    </div>
+  </div>
+</footer>
+
 
   <script src="script.js" defer></script>
 </body>
