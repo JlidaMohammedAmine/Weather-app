@@ -1,2 +1,2 @@
 # Weather-app
-Weather website using api
+Weather website with no api key
